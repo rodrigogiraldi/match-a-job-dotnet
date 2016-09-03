@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="body-full-height">
+
+<head>
+    <!-- META SECTION -->
+    <title>Match a Job</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="../css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+
+    <!--Angular JS-->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+
+    <!--App-->
+    <script src="../app/app.js"></script>
+    <script src="../app/config.js"></script>
+
+    <script src="../app/services/address-service.js"></script>
+    <script src="../app/services/company-service.js"></script>
+    <script src="../app/services/city-service.js"></script>
+    <script src="../app/services/country-service.js"></script>
+    <script src="../app/services/employee-service.js"></script>
+    <script src="../app/services/post-service.js"></script>
+    <script src="../app/services/user-service.js"></script>
+
+    <script src="../app/controllers/user.js"></script>
+</head>
+
+<body ng-app="matchAJob">
+    <div class="login-container">
+        <div class="login-box animated fadeInDown">
+            <a href="#"><div class="login-logo"></div></a>  
+            <div class="login-body">
+                <div ui-view="login"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

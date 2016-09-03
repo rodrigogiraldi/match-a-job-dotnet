@@ -1,0 +1,40 @@
+<div class="panel panel-primary" ng-init="getCountryAndCity()">
+    <div class="panel-heading">
+        <h3 class="panel-title">Change your address</h3>
+    </div>
+    <div class="panel-body">
+
+        <div class="form-group">
+            <label class="col-md-3 control-label">Country</label>
+            <div class="col-md-9">
+                <select class="form-control select" ng-model="countrySelected" ng-options="c as c.name for c in countries" ng-change="getCities()"></select>
+            </div>
+
+
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+            <label class="col-md-3 control-label">City</label>
+            <div class="col-md-9">
+                <select class="form-control select" ng-model="citySelected" ng-options="ct as ct.name for ct in cities"></select>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+            <label class="col-md-3 control-label">Address</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" ng-model="currentAddress.address" value="Mario Clapier Urbinati St, 370, Zona 7" />
+                <!--<select class="form-control select" ng-model="citySelected" ng-options="ct as ct.name for ct in cities"></select>-->
+            </div>
+        </div>        
+
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-primary pull-right" ng-click="save()">Save</button>
+    </div>
+</div>

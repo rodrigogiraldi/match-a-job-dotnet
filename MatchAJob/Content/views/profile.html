@@ -1,0 +1,115 @@
+<form class="form-horizontal" name="profileForm" ng-init="getProfile()"  ng-submit="updateProfile()">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Edit</strong> Profile</h3>
+            <ul class="panel-controls">
+                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">First Name</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.employee.first_name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Last Name</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.employee.last_name" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Date of birth</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="date" class="form-control" ng-model="profile.employee.date_of_birth" />
+                </div>
+            </div>            
+
+            <br>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Company</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.job.company" disabled />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Post</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.job.post" disabled />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label"></label>
+                <div class="col-md-6 col-xs-12">
+                    <button type="button" class="btn btn-default btn-rounded pull-right" ng-click="changeJobOpen()">Change</button>
+                    <!--<input type="text" class="form-control" value="Software Developer" disabled />-->
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Country</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.address.country" disabled />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">City</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.address.city" disabled />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Address</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.address.address" disabled />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label"></label>
+                <div class="col-md-6 col-xs-12">
+                    <button type="button" class="btn btn-default btn-rounded pull-right" ng-click="changeAddressOpen()">Change</button>
+                    <!--<input type="text" class="form-control" value="Software Developer" disabled />-->
+                </div>
+            </div>
+
+            <br>
+            </form>
+            <div class="form-group"  ng-class="profileForm.email.$invalid?'has-error':''">
+                <label class="col-md-3 col-xs-12 control-label">Email</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="text" class="form-control" ng-model="profile.user.email" name="email" ng-pattern="validations.email" required />
+                    </form>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Change password</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="password" class="form-control" ng-model="profile.user.password" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label">Repeat the password</label>
+                <div class="col-md-6 col-xs-12">
+                    <input type="password" class="form-control" ng-model="repeatPassword" />
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-primary pull-right" type="submit">Save</button>
+        </div>
+    </div>
+</form>

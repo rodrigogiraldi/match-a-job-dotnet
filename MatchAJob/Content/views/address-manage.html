@@ -1,0 +1,54 @@
+<form class="form-horizontal" name="profileForm" ng-init="getCountries()">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><strong>Manage</strong> Address</h3>
+            <ul class="panel-controls">
+                <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+            </ul>
+        </div>
+        <div class="panel-body">
+            <div class="form-group">
+                <label class="col-md-3 control-label">Country</label>
+                <div class="col-md-6">
+                    <select class="form-control select" name="countrySelected" ng-model="countrySelected" ng-change="getCities()" required>
+                        <option ng-repeat="c in countries" value="{{c.id_country}}">{{c.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <!--{{profileForm.countrySelected.$valid}}-->
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label"></label>
+                <div class="col-md-5 col-xs-12">
+                    <input type="text" class="form-control" ng-model="country" name="country" required />
+                </div>
+                <div class="col-md-1 col-xs-12">
+                    <input class="btn btn-primary" ng-class="profileForm.country.$valid?'':'disabled'" type="button" value="Add" ng-click="addCountry()">
+                </div>
+            </div>
+
+            <br><br>
+
+            <div class="form-group">
+                <label class="col-md-3 control-label">City</label>
+                <div class="col-md-6">
+                    <select class="form-control select">
+                        <option ng-repeat="ct in cities">{{ct.name}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-3 col-xs-12 control-label"></label>
+                <div class="col-md-5 col-xs-12">
+                    <input type="text" class="form-control" ng-model="city" name="city" required />
+                </div>
+                <div class="col-md-1 col-xs-12">
+                    <input class="btn btn-primary" ng-class="profileForm.countrySelected.$valid &&
+                                                             profileForm.city.$valid?'':'disabled'" type="button" value="Add" ng-click="addCity()">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</form>
