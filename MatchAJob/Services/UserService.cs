@@ -31,5 +31,23 @@ namespace MatchAJob.Services
                 return JsonConvert.SerializeObject(new { msg = "User not found!" });
             }
         }
+
+        public string add(User user)
+        {
+            var findByEmail = Db.Users.Where(w => w.Email == user.Email);
+
+            if (findByEmail.Count() > 0)
+            {
+                return JsonConvert.SerializeObject(new { msg = "Email already used!", error = 1 });
+            }
+            else
+            {
+                Db.Users.Add(user);
+                Db.SaveChanges();
+
+                user.Password = "";
+                return JsonConvert.SerializeObject(user);
+            }
+        }
     }
 }

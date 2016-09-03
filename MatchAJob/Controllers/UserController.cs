@@ -22,5 +22,11 @@ namespace MatchAJob.Controllers
         {
             return this.userService.find(user);
         }
+
+        [HttpPost]
+        public string add(User user)
+        {
+            return this.userService.add(user);
+        }
     }
 }
